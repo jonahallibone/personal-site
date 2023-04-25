@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from "react";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
 import type { NextPage } from "next";
 import theme from "styles/theme";
 
@@ -27,6 +28,7 @@ if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
 const App = ({ Component, pageProps }: AppPropsWithLayout) => (
   <ChakraProvider theme={theme}>
     <Component {...pageProps} />
+    <Analytics />
   </ChakraProvider>
 );
 
